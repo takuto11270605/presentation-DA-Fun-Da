@@ -373,6 +373,87 @@
       opacity: 0.85;
     }
 
+    /* AR/VR/MRの違いスライド */
+    .slide-xr {
+      background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    }
+
+    .xr-container {
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    .xr-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
+
+    .xr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .xr-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(10px);
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .xr-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .xr-card:nth-child(1) { border-top: 4px solid #00d4ff; }
+    .xr-card:nth-child(2) { border-top: 4px solid #7c3aed; }
+    .xr-card:nth-child(3) { border-top: 4px solid #f472b6; }
+
+    .xr-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .xr-card-emoji {
+      font-size: 3rem;
+    }
+
+    .xr-card-name {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .xr-card:nth-child(1) .xr-card-name { color: #00d4ff; }
+    .xr-card:nth-child(2) .xr-card-name { color: #7c3aed; }
+    .xr-card:nth-child(3) .xr-card-name { color: #f472b6; }
+
+    .xr-card-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .xr-card-desc {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .xr-card-device {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.95rem;
+      opacity: 0.7;
+    }
+
     /* コグニサイズスライド */
     .slide-cogni {
       background: linear-gradient(135deg, #e65c00 0%, #f9d423 100%);
@@ -1388,6 +1469,51 @@
         font-size: 0.9rem;
       }
 
+      /* AR/VR/MRの違い */
+      .xr-container {
+        padding: 0 1rem;
+      }
+
+      .xr-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .xr-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .xr-card {
+        padding: 1.5rem;
+      }
+
+      .xr-card-header {
+        margin-bottom: 1rem;
+      }
+
+      .xr-card-emoji {
+        font-size: 2rem;
+      }
+
+      .xr-card-name {
+        font-size: 1.5rem;
+      }
+
+      .xr-card-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      .xr-card-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .xr-card-device {
+        font-size: 0.85rem;
+      }
+
       /* コグニサイズ */
       .cogni-container {
         padding: 0 1rem;
@@ -1656,7 +1782,7 @@
     <div class="page-indicator">
       <span class="page-current" id="current-page">1</span>
       <span class="page-separator">/</span>
-      <span class="page-total">17</span>
+      <span class="page-total">18</span>
     </div>
     <!-- ナビゲーションドット -->
     <nav class="nav">
@@ -1677,6 +1803,7 @@
       <div class="nav-dot" onclick="scrollToSlide(15)"></div>
       <div class="nav-dot" onclick="scrollToSlide(16)"></div>
       <div class="nav-dot" onclick="scrollToSlide(17)"></div>
+      <div class="nav-dot" onclick="scrollToSlide(18)"></div>
     </nav>
   </div>
 
@@ -1827,8 +1954,44 @@
     </div>
   </section>
 
-  <!-- スライド7: コグニサイズ説明 -->
-  <section class="slide slide-cogni" id="slide-7">
+  <!-- スライド7: AR/VR/MRの違い -->
+  <section class="slide slide-xr" id="slide-7">
+    <div class="xr-container">
+      <h2 class="xr-title">AR・VR・MR の違い</h2>
+      <div class="xr-grid">
+        <div class="xr-card">
+          <div class="xr-card-header">
+            <span class="xr-card-emoji">📱</span>
+            <span class="xr-card-name">AR</span>
+          </div>
+          <p class="xr-card-subtitle">拡張現実（Augmented Reality）</p>
+          <p class="xr-card-desc">現実世界にデジタル情報を重ねて表示。<br>世界を「拡張」する技術。</p>
+          <p class="xr-card-device">🛠️ スマホ・タブレット・ARグラス</p>
+        </div>
+        <div class="xr-card">
+          <div class="xr-card-header">
+            <span class="xr-card-emoji">🥽</span>
+            <span class="xr-card-name">VR</span>
+          </div>
+          <p class="xr-card-subtitle">仮想現実（Virtual Reality）</p>
+          <p class="xr-card-desc">100％バーチャルの世界に入り込んだような体験。<br>完全な没入感を提供。</p>
+          <p class="xr-card-device">🛠️ VRヘッドセット・VRゴーグル</p>
+        </div>
+        <div class="xr-card">
+          <div class="xr-card-header">
+            <span class="xr-card-emoji">🕶️</span>
+            <span class="xr-card-name">MR</span>
+          </div>
+          <p class="xr-card-subtitle">複合現実（Mixed Reality）</p>
+          <p class="xr-card-desc">ARをさらに発展。ユーザーの位置や動きに合わせてデジタル情報を表示・操作可能。複数人での同時体験も。</p>
+          <p class="xr-card-device">🛠️ MRデバイス（Meta Quest 3等）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド8: コグニサイズ説明 -->
+  <section class="slide slide-cogni" id="slide-8">
     <div class="cogni-container">
       <span class="cogni-badge">🧠 🦶 コグニサイズ</span>
       <h2 class="cogni-title">ゲーム中は「足」で操作</h2>
@@ -1856,8 +2019,8 @@
     </div>
   </section>
 
-  <!-- スライド8: MRゲームデモ -->
-  <section class="slide slide-5" id="slide-8">
+  <!-- スライド9: MRゲームデモ -->
+  <section class="slide slide-5" id="slide-9">
     <div class="demo-container">
       <span class="demo-badge">🎮 MRゲーム画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -1867,8 +2030,8 @@
     </div>
   </section>
 
-  <!-- スライド9: MRゲーム動画 -->
-  <section class="slide slide-5" id="slide-9">
+  <!-- スライド10: MRゲーム動画 -->
+  <section class="slide slide-5" id="slide-10">
     <div class="demo-container">
       <span class="demo-badge">🎮 MRゲームプレイ動画</span>
       <h2 class="demo-title">実際のプレイ映像</h2>
@@ -1878,8 +2041,8 @@
     </div>
   </section>
 
-  <!-- スライド10: 脳波連動 -->
-  <section class="slide slide-7" id="slide-10">
+  <!-- スライド11: 脳波連動 -->
+  <section class="slide slide-7" id="slide-11">
     <div class="eeg-container">
       <span class="eeg-badge">脳波取得</span>
       <h2 class="eeg-title">4つの脳波で集中力を可視化</h2>
@@ -1918,8 +2081,8 @@
     </div>
   </section>
 
-  <!-- スライド11: 集中パターンの種類 -->
-  <section class="slide slide-8" id="slide-11">
+  <!-- スライド12: 集中パターンの種類 -->
+  <section class="slide slide-8" id="slide-12">
     <div class="pattern-container">
       <h2 class="pattern-title">3つの集中パターン</h2>
       <p class="pattern-subtitle">脳波データから分析された、ユーザーの集中タイプを判定</p>
@@ -1970,8 +2133,8 @@
     </div>
   </section>
 
-  <!-- スライド12: AI提案 -->
-  <section class="slide slide-10" id="slide-12">
+  <!-- スライド13: AI提案 -->
+  <section class="slide slide-10" id="slide-13">
     <div class="ai-container">
       <div class="ai-left">
         <span class="ai-badge">✨ ユーザーへの提案</span>
@@ -2010,8 +2173,8 @@
     </div>
   </section>
 
-  <!-- スライド13: VR旅行 -->
-  <section class="slide slide-9" id="slide-13">
+  <!-- スライド14: VR旅行 -->
+  <section class="slide slide-9" id="slide-14">
     <div class="vr-container">
       <span class="vr-badge">🌍 VR旅行機能</span>
       <h2 class="vr-title">ゲームのご褒美は、旅行</h2>
@@ -2046,8 +2209,8 @@
     </div>
   </section>
 
-  <!-- スライド14: 旅行が報酬である理由 -->
-  <section class="slide slide-travel-reason" id="slide-14">
+  <!-- スライド15: 旅行が報酬である理由 -->
+  <section class="slide slide-travel-reason" id="slide-15">
     <div class="travel-reason-container">
       <span class="travel-reason-badge">📊 なぜ旅行が報酬なのか？</span>
       <h2 class="travel-reason-title">高齢者に最も人気な趣味は「旅行」</h2>
@@ -2087,8 +2250,8 @@
     </div>
   </section>
 
-  <!-- スライド15: VR旅行デモ -->
-  <section class="slide slide-5" id="slide-15">
+  <!-- スライド16: VR旅行デモ -->
+  <section class="slide slide-5" id="slide-16">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -2098,8 +2261,8 @@
     </div>
   </section>
 
-  <!-- スライド16: VR旅行中画面 -->
-  <section class="slide slide-5" id="slide-16">
+  <!-- スライド17: VR旅行中画面 -->
+  <section class="slide slide-5" id="slide-17">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行中画面</span>
       <h2 class="demo-title">実際の旅行中の画面（Arrival.Space内）</h2>
@@ -2109,8 +2272,8 @@
     </div>
   </section>
 
-  <!-- スライド17: まとめ -->
-  <section class="slide slide-11" id="slide-17">
+  <!-- スライド18: まとめ -->
+  <section class="slide slide-11" id="slide-18">
     <div class="summary-container">
       <h2 class="summary-title">認知症予防は、楽しみながら</h2>
       <div class="summary-points">
