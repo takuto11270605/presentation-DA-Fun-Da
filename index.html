@@ -1772,6 +1772,70 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* 隠しコマンドモーダル */
+    .secret-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .secret-modal.active {
+      display: flex;
+    }
+
+    .secret-content {
+      text-align: center;
+      animation: zoomIn 0.5s ease;
+    }
+
+    .secret-image {
+      max-width: 80vw;
+      max-height: 70vh;
+      border-radius: 20px;
+      box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+    }
+
+    .secret-text {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #ffd700;
+      font-weight: 900;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .secret-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .secret-close:hover {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -2342,7 +2406,76 @@
         if (current > 0) scrollToSlide(current);
       }
     });
+
+    // 🎮 コナミコマンド: ↑↑↓↓←→←→BA
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          showSecretImage();
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+
+    function showSecretImage() {
+      const modal = document.getElementById('secret-modal');
+      modal.classList.add('active');
+      // コンフェッティエフェクト
+      createConfetti();
+    }
+
+    function closeSecretModal() {
+      const modal = document.getElementById('secret-modal');
+      modal.classList.remove('active');
+    }
+
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#f472b6', '#00d4ff'];
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: fixed;
+          width: 10px;
+          height: 10px;
+          background: ${colors[Math.floor(Math.random() * colors.length)]};
+          left: ${Math.random() * 100}vw;
+          top: -10px;
+          z-index: 10001;
+          border-radius: 50%;
+          animation: confettiFall ${2 + Math.random() * 3}s linear forwards;
+        `;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+      }
+    }
+
+    // コンフェッティアニメーション
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes confettiFall {
+        to {
+          transform: translateY(100vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
+
+  <!-- 隠しモーダル -->
+  <div id="secret-modal" class="secret-modal" onclick="closeSecretModal()">
+    <span class="secret-close">&times;</span>
+    <div class="secret-content">
+      <img src="images/DAFunDa.png" alt="DA Fun Da" class="secret-image">
+      <p class="secret-text">🎉 隠しコマンド発見！ 🎉</p>
+    </div>
+  </div>
 
 </body>
 </html>
