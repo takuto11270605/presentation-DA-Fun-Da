@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA Fun Da - アプリ紹介</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
+
+    /* スライド1: タイトル */
+    .slide-1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    }
+
+    .title-main {
+      font-size: 8rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .title-sub {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-top: 2rem;
+      opacity: 0.9;
+      letter-spacing: 0.3em;
+    }
+
+    .title-desc {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      padding: 1rem 3rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* スライド2: コンセプト */
+    .slide-2 {
+      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .concept-container {
+      text-align: center;
+      max-width: 1200px;
+      padding: 0 2rem;
+    }
+
+    .concept-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .concept-text {
+      font-size: 1.8rem;
+      line-height: 2.2;
+      font-weight: 300;
+    }
+
+    .highlight {
+      color: #00d4ff;
+      font-weight: 700;
+    }
+
+    .concept-icons {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .concept-icon {
+      text-align: center;
+    }
+
+    .concept-icon-emoji {
+      font-size: 5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .concept-icon-text {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    /* スライド3: 3つの機能 */
+    .slide-3 {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+
+    .features-title {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      font-weight: 700;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .feature-card:nth-child(1) { border-top: 4px solid #00d4ff; }
+    .feature-card:nth-child(2) { border-top: 4px solid #7c3aed; }
+    .feature-card:nth-child(3) { border-top: 4px solid #f472b6; }
+
+    .feature-emoji {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .feature-desc {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      line-height: 1.8;
+    }
+
+    /* スライド4: 一元管理 */
+    .slide-4 {
+      background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+    }
+
+    .dashboard-container {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+      max-width: 1400px;
+      padding: 0 4rem;
+    }
+
+    .dashboard-left {
+      flex: 1;
+    }
+
+    .dashboard-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .dashboard-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-list {
+      list-style: none;
+      font-size: 1.4rem;
+      line-height: 2.5;
+    }
+
+    .dashboard-list li::before {
+      content: "✓ ";
+      color: #90EE90;
+      font-weight: bold;
+    }
+
+    .dashboard-right {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+    }
+
+    .stat-card:nth-child(1) .stat-value { color: #90EE90; }
+    .stat-card:nth-child(2) .stat-value { color: #FFD700; }
+    .stat-card:nth-child(3) .stat-value { color: #FF6B6B; }
+    .stat-card:nth-child(4) .stat-value { color: #87CEEB; }
+
+    /* スライド5: MRゲーム */
+    .slide-5 {
+      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    }
+
+    .mr-container {
+      text-align: center;
+      max-width: 1200px;
+    }
+
+    .mr-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .mr-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .mr-subtitle {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .game-card {
+      background: rgba(0,0,0,0.2);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+
+    .game-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .game-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .game-desc {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* スライド6: 脳波連動 */
+    .slide-6 {
+      background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
+    }
+
+    .eeg-container {
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 4rem;
+    }
+
+    .eeg-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .eeg-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .eeg-subtitle {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+    }
+
+    .wave-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .wave-card {
+      background: rgba(0,0,0,0.25);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wave-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .wave-card:nth-child(1) { border-top: 4px solid #ff6b6b; }
+    .wave-card:nth-child(2) { border-top: 4px solid #ffd93d; }
+    .wave-card:nth-child(3) { border-top: 4px solid #6bcb77; }
+    .wave-card:nth-child(4) { border-top: 4px solid #4d96ff; }
+
+    .wave-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .wave-name {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    .wave-range {
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .wave-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .wave-bar-mini {
+      height: 8px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+
+    .wave-fill-mini {
+      height: 100%;
+      border-radius: 4px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .wave-card:nth-child(1) .wave-fill-mini { background: #ff6b6b; width: 45%; }
+    .wave-card:nth-child(2) .wave-fill-mini { background: #ffd93d; width: 65%; }
+    .wave-card:nth-child(3) .wave-fill-mini { background: #6bcb77; width: 80%; }
+    .wave-card:nth-child(4) .wave-fill-mini { background: #4d96ff; width: 55%; }
+
+    .eeg-footer {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      padding: 1.5rem 3rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    .wave-item:nth-child(1) .wave-fill { background: #ff6b6b; width: 45%; }
+    .wave-item:nth-child(2) .wave-fill { background: #ffd93d; width: 65%; }
+    .wave-item:nth-child(3) .wave-fill { background: #6bcb77; width: 80%; }
+    .wave-item:nth-child(4) .wave-fill { background: #4d96ff; width: 55%; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* スライド7: 集中パターン */
+    .slide-7 {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+
+    .pattern-container {
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    .pattern-title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .pattern-subtitle {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 4rem;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .pattern-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pattern-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .pattern-card:nth-child(1) { border-top: 4px solid #00d4ff; }
+    .pattern-card:nth-child(2) { border-top: 4px solid #ffd93d; }
+    .pattern-card:nth-child(3) { border-top: 4px solid #ff6b6b; }
+
+    .pattern-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pattern-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pattern-card:nth-child(1) .pattern-name { color: #00d4ff; }
+    .pattern-card:nth-child(2) .pattern-name { color: #ffd93d; }
+    .pattern-card:nth-child(3) .pattern-name { color: #ff6b6b; }
+
+    .pattern-type {
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .pattern-desc {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .pattern-recommend {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+    }
+
+    .pattern-recommend-label {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 0.3rem;
+    }
+
+    .pattern-recommend-text {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* スライド8: VR旅行 */
+    .slide-8 {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    }
+
+    .vr-container {
+      text-align: center;
+      max-width: 1200px;
+    }
+
+    .vr-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .vr-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .vr-subtitle {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+    }
+
+    .vr-features {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+    }
+
+    .vr-feature {
+      background: rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      backdrop-filter: blur(10px);
+      min-width: 280px;
+    }
+
+    .vr-feature-emoji {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .vr-feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .vr-feature-desc {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* スライド9: AI提案 */
+    .slide-9 {
+      background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+    }
+
+    .ai-container {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+      max-width: 1400px;
+      padding: 0 4rem;
+    }
+
+    .ai-left {
+      flex: 1;
+    }
+
+    .ai-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .ai-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+
+    .ai-text {
+      font-size: 1.3rem;
+      line-height: 2;
+    }
+
+    .ai-right {
+      flex: 1;
+    }
+
+    .ai-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .ai-card {
+      background: rgba(0,0,0,0.2);
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .ai-card-emoji {
+      font-size: 2.5rem;
+    }
+
+    .ai-card-content {
+      flex: 1;
+    }
+
+    .ai-card-type {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 0.3rem;
+    }
+
+    .ai-card-msg {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* スライド10: まとめ */
+    .slide-10 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    }
+
+    .summary-container {
+      text-align: center;
+      max-width: 1000px;
+    }
+
+    .summary-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
+
+    .summary-points {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .summary-point {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      min-width: 200px;
+    }
+
+    .summary-point-emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-point-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .summary-cta {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-top: 2rem;
+      padding: 1.5rem 4rem;
+      background: rgba(255,255,255,0.2);
+      border-radius: 60px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-end {
+      font-size: 5rem;
+      font-weight: 900;
+      margin-top: 3rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ナビゲーション */
+    .nav {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .nav-dot:hover,
+    .nav-dot.active {
+      background: white;
+      transform: scale(1.3);
+    }
+
+    /* スクロールスナップ */
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 1024px) {
+      .title-main { font-size: 5rem; }
+      .features-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .game-grid { grid-template-columns: repeat(2, 1fr); }
+      .dashboard-container,
+      .eeg-container,
+      .ai-container { flex-direction: column; gap: 3rem; }
+      .vr-features { flex-direction: column; gap: 2rem; }
+      .summary-points { flex-direction: column; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーションドット -->
+  <nav class="nav">
+    <div class="nav-dot active" onclick="scrollToSlide(1)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(7)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(8)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(9)"></div>
+    <div class="nav-dot" onclick="scrollToSlide(10)"></div>
+  </nav>
+
+  <!-- スライド1: タイトル -->
+  <section class="slide slide-1" id="slide-1">
+    <h1 class="title-main">DA Fun Da</h1>
+    <p class="title-sub">ダ・ファン・ダ</p>
+    <p class="title-desc">楽しさを取り入れた認知症予防活動</p>
+  </section>
+
+  <!-- スライド2: コンセプト -->
+  <section class="slide slide-2" id="slide-2">
+    <div class="concept-container">
+      <h2 class="concept-title">高齢者の認知症予防を、テクノロジーで支える</h2>
+      <p class="concept-text">
+        <span class="highlight">Fitbit</span> でからだの状態を見える化<br>
+        <span class="highlight">脳波センサー</span> で集中力をリアルタイム計測<br>
+        <span class="highlight">MRゲーム</span> で楽しみながら認知トレーニング
+      </p>
+      <div class="concept-icons">
+        <div class="concept-icon">
+          <span class="concept-icon-emoji">⌚</span>
+          <span class="concept-icon-text">ウェアラブル連携</span>
+        </div>
+        <div class="concept-icon">
+          <span class="concept-icon-emoji">🧠</span>
+          <span class="concept-icon-text">脳波センシング</span>
+        </div>
+        <div class="concept-icon">
+          <span class="concept-icon-emoji">🎮</span>
+          <span class="concept-icon-text">ゲーミフィケーション</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド3: 3つの機能 -->
+  <section class="slide slide-3" id="slide-3">
+    <h2 class="features-title">3つの主要機能</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-emoji">📊</div>
+        <h3 class="feature-name">一元管理</h3>
+        <p class="feature-desc">
+          歩数・心拍・睡眠・脳波を<br>
+          ひとつの画面で確認。<br>
+          天気に応じたアドバイスも。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">🎮</div>
+        <h3 class="feature-name">MRゲーム</h3>
+        <p class="feature-desc">
+          4種類の脳トレゲームで<br>
+          楽しく認知機能をトレーニング。<br>
+          脳波連動で集中度を測定。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-emoji">🌍</div>
+        <h3 class="feature-name">VR旅行</h3>
+        <p class="feature-desc">
+          世界中の観光地を<br>
+          バーチャルで旅行体験。<br>
+          ゲームで貯めたコインで解放。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド4: 一元管理 -->
+  <section class="slide slide-4" id="slide-4">
+    <div class="dashboard-container">
+      <div class="dashboard-left">
+        <span class="dashboard-badge">📊一元管理機能</span>
+        <h2 class="dashboard-title">健康データを<br>まるごと一元管理</h2>
+        <ul class="dashboard-list">
+          <li>Fitbit連携で歩数・心拍・睡眠を自動取得</li>
+          <li>脳波データをリアルタイムグラフ化</li>
+          <li>天気情報と連動したアクティビティ提案</li>
+          <li>ゲームで獲得したコインの推移表示</li>
+          <li>集中度パターンの分析とアドバイス</li>
+        </ul>
+      </div>
+      <div class="dashboard-right">
+        <div class="stat-card">
+          <div class="stat-label">今日の歩数</div>
+          <div class="stat-value">8,432</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">獲得コイン</div>
+          <div class="stat-value">1,250</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">安静時心拍</div>
+          <div class="stat-value">68 bpm</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">体重</div>
+          <div class="stat-value">65 kg</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド5: MRゲーム -->
+  <section class="slide slide-5" id="slide-5">
+    <div class="mr-container">
+      <span class="mr-badge">🎮 MR Game</span>
+      <h2 class="mr-title">楽しみながら脳をトレーニング</h2>
+      <p class="mr-subtitle">4種類のゲームで多角的に認知機能を鍛える</p>
+      <div class="game-grid">
+        <div class="game-card">
+          <div class="game-emoji">🏃</div>
+          <h3 class="game-name">3Dランニング</h3>
+          <p class="game-desc">Unity製3D空間を走りながらクイズに挑戦</p>
+        </div>
+        <div class="game-card">
+          <div class="game-emoji">🔢</div>
+          <h3 class="game-name">数合わせ</h3>
+          <p class="game-desc">パネルを選んで合計を作る計算力トレーニング</p>
+        </div>
+        <div class="game-card">
+          <div class="game-emoji">🔤</div>
+          <h3 class="game-name">しりとり</h3>
+          <p class="game-desc">語彙力と瞬発力を鍛える言葉遊び</p>
+        </div>
+        <div class="game-card">
+          <div class="game-emoji">🧠</div>
+          <h3 class="game-name">脳トレ</h3>
+          <p class="game-desc">記憶・論理・計算の3種類の問題</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド6: 脳波連動 -->
+  <section class="slide slide-6" id="slide-6">
+    <div class="eeg-container">
+      <span class="eeg-badge">🧠 Muse EEG</span>
+      <h2 class="eeg-title">4つの脳波で集中力を可視化</h2>
+      <p class="eeg-subtitle">Muse S 脳波センサーでリアルタイム測定し、あなたの集中タイプを分析</p>
+      <div class="wave-grid">
+        <div class="wave-card">
+          <div class="wave-icon">😴</div>
+          <h3 class="wave-name">δ波</h3>
+          <p class="wave-range">1-4 Hz</p>
+          <p class="wave-desc">深い睡眠時に<br>優位になる波</p>
+          <div class="wave-bar-mini"><div class="wave-fill-mini"></div></div>
+        </div>
+        <div class="wave-card">
+          <div class="wave-icon">💭</div>
+          <h3 class="wave-name">θ波</h3>
+          <p class="wave-range">4-8 Hz</p>
+          <p class="wave-desc">まどろみや<br>瞑想状態を示す</p>
+          <div class="wave-bar-mini"><div class="wave-fill-mini"></div></div>
+        </div>
+        <div class="wave-card">
+          <div class="wave-icon">😌</div>
+          <h3 class="wave-name">α波</h3>
+          <p class="wave-range">8-13 Hz</p>
+          <p class="wave-desc">リラックスした<br>覚醒状態</p>
+          <div class="wave-bar-mini"><div class="wave-fill-mini"></div></div>
+        </div>
+        <div class="wave-card">
+          <div class="wave-icon">🎯</div>
+          <h3 class="wave-name">β波</h3>
+          <p class="wave-range">13-30 Hz</p>
+          <p class="wave-desc">集中・思考時に<br>活発に出現</p>
+          <div class="wave-bar-mini"><div class="wave-fill-mini"></div></div>
+        </div>
+      </div>
+      <p class="eeg-footer">集中パターンを3タイプに分類し、最適なゲームを提案します</p>
+    </div>
+  </section>
+
+  <!-- スライド7: 集中パターンの種類 -->
+  <section class="slide slide-7" id="slide-7">
+    <div class="pattern-container">
+      <h2 class="pattern-title">3つの集中パターン</h2>
+      <p class="pattern-subtitle">脳波データから分析された、あなたの集中タイプを判定</p>
+      <div class="pattern-grid">
+        <div class="pattern-card">
+          <div class="pattern-icon">🌟</div>
+          <h3 class="pattern-name">安定型</h3>
+          <p class="pattern-type">Sustained Focus</p>
+          <p class="pattern-desc">
+            集中力が長時間安定して持続。<br>
+            β波が一定のレベルを維持し、<br>
+            深い没頭が得意なタイプ。
+          </p>
+          <div class="pattern-recommend">
+            <div class="pattern-recommend-label">おすすめゲーム</div>
+            <div class="pattern-recommend-text">🧩 パズルゲーム</div>
+          </div>
+        </div>
+        <div class="pattern-card">
+          <div class="pattern-icon">🔄</div>
+          <h3 class="pattern-name">変動型</h3>
+          <p class="pattern-type">Fluctuating Focus</p>
+          <p class="pattern-desc">
+            集中と休息を繰り返すリズム型。<br>
+            短い集中を複数回重ねることで<br>
+            効率的に取り組めるタイプ。
+          </p>
+          <div class="pattern-recommend">
+            <div class="pattern-recommend-label">おすすめゲーム</div>
+            <div class="pattern-recommend-text">🧠 記憶ゲーム</div>
+          </div>
+        </div>
+        <div class="pattern-card">
+          <div class="pattern-icon">📉</div>
+          <h3 class="pattern-name">減衰型</h3>
+          <p class="pattern-type">Declining Focus</p>
+          <p class="pattern-desc">
+            最初は高い集中力を発揮。<br>
+            ゲーム後はこまめに休憩し、<br>
+            運動やVR旅行でリフレッシュ。
+          </p>
+          <div class="pattern-recommend">
+            <div class="pattern-recommend-label">おすすめ</div>
+            <div class="pattern-recommend-text">🔢 ゲーム + 🌍 VR旅行</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド8: VR旅行 -->
+  <section class="slide slide-8" id="slide-8">
+    <div class="vr-container">
+      <span class="vr-badge">🌍 VR Travel</span>
+      <h2 class="vr-title">ゲームのご褒美は、世界旅行</h2>
+      <p class="vr-subtitle">コインを貯めて、世界中の観光地を解放しよう</p>
+      <div class="vr-features">
+        <div class="vr-feature">
+          <div class="vr-feature-emoji">🗼</div>
+          <h3 class="vr-feature-title">観光名所</h3>
+          <p class="vr-feature-desc">
+            原爆ドーム、二年坂、<br>
+            熊野神社など
+          </p>
+        </div>
+        <div class="vr-feature">
+          <div class="vr-feature-emoji">🪙</div>
+          <h3 class="vr-feature-title">頑張った分解放</h3>
+          <p class="vr-feature-desc">
+            ゲームで貯めたコインと<br>
+            計測した歩数で<br/>
+            新しい場所をアンロック
+          </p>
+        </div>
+        <div class="vr-feature">
+          <div class="vr-feature-emoji">🧳</div>
+          <h3 class="vr-feature-title">没入体験</h3>
+          <p class="vr-feature-desc">
+            VRヘッドセットで<br>
+            まるでその場にいるかのよう
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド9: AI提案 -->
+  <section class="slide slide-9" id="slide-9">
+    <div class="ai-container">
+      <div class="ai-left">
+        <span class="ai-badge">✨ Smart Suggestion</span>
+        <h2 class="ai-title">あなたに最適な<br>アクティビティを提案</h2>
+        <p class="ai-text">
+          集中パターンと時間帯を分析し、<br>
+          今のあなたにぴったりの<br>
+          ゲームや活動を提案します。
+        </p>
+      </div>
+      <div class="ai-right">
+        <div class="ai-cards">
+          <div class="ai-card">
+            <div class="ai-card-emoji">🌟</div>
+            <div class="ai-card-content">
+              <div class="ai-card-type">安定型タイプへの提案</div>
+              <div class="ai-card-msg">3Dランニングで長距離に挑戦！</div>
+            </div>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-emoji">🔄</div>
+            <div class="ai-card-content">
+              <div class="ai-card-type">変動型タイプへの提案</div>
+              <div class="ai-card-msg">短時間の数合わせがおすすめ</div>
+            </div>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-emoji">🌅</div>
+            <div class="ai-card-content">
+              <div class="ai-card-type">午前中の提案</div>
+              <div class="ai-card-msg">集中力が高い今がチャンス！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド10: まとめ -->
+  <section class="slide slide-10" id="slide-10">
+    <div class="summary-container">
+      <h2 class="summary-title">認知症予防は、楽しみながら</h2>
+      <div class="summary-points">
+        <div class="summary-point">
+          <div class="summary-point-emoji">📊</div>
+          <div class="summary-point-text">見える化</div>
+        </div>
+        <div class="summary-point">
+          <div class="summary-point-emoji">🎮</div>
+          <div class="summary-point-text">楽しさ</div>
+        </div>
+        <div class="summary-point">
+          <div class="summary-point-emoji">🧠</div>
+          <div class="summary-point-text">脳波連動</div>
+        </div>
+        <div class="summary-point">
+          <div class="summary-point-emoji">✨</div>
+          <div class="summary-point-text">最適提案</div>
+        </div>
+      </div>
+      <p class="summary-cta">楽しさを取り入れた認知症予防活動</p>
+      <div class="logo-end">DA Fun Da</div>
+    </div>
+  </section>
+
+  <script>
+    // ナビゲーションドットの更新
+    const dots = document.querySelectorAll('.nav-dot');
+    const slides = document.querySelectorAll('.slide');
+
+    function scrollToSlide(n) {
+      document.getElementById('slide-' + n).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // スクロール監視
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const slideId = entry.target.id;
+          const slideNum = parseInt(slideId.replace('slide-', ''));
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === slideNum - 1);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    slides.forEach(slide => observer.observe(slide));
+
+    // キーボードナビゲーション
+    document.addEventListener('keydown', (e) => {
+      const current = Array.from(dots).findIndex(d => d.classList.contains('active'));
+      if (e.key === 'ArrowDown' || e.key === ' ') {
+        e.preventDefault();
+        if (current < slides.length - 1) scrollToSlide(current + 2);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (current > 0) scrollToSlide(current);
+      }
+    });
+  </script>
+
+</body>
+</html>
