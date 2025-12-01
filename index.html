@@ -34,153 +34,36 @@
     /* スライド1: タイトル */
     .slide-1 {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-      position: relative;
-    }
-
-    .slide-1::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%),
-        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .title-container {
-      text-align: center;
-      z-index: 1;
-    }
-
-    .title-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.3);
-      animation: fadeInDown 1s ease-out;
     }
 
     .title-main {
-      font-size: 9rem;
+      font-size: 8rem;
       font-weight: 900;
-      letter-spacing: 0.05em;
-      text-shadow: 
-        0 0 40px rgba(255,255,255,0.5),
-        0 10px 40px rgba(0,0,0,0.3);
-      animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
-      background: linear-gradient(180deg, #ffffff 0%, #e0e0ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      letter-spacing: 0.1em;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: float 3s ease-in-out infinite;
     }
 
     .title-sub {
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-top: 1rem;
-      opacity: 0.95;
-      letter-spacing: 0.5em;
-      animation: fadeInUp 1s ease-out 0.3s backwards;
-    }
-
-    .title-sub-en {
-      font-size: 1.3rem;
-      font-weight: 300;
-      margin-top: 1.5rem;
-      opacity: 0.8;
-      letter-spacing: 0.1em;
-      animation: fadeInUp 1s ease-out 0.2s backwards;
-    }
-
-    .title-tagline {
-      font-size: 1.8rem;
-      margin-top: 2.5rem;
-      padding: 1.2rem 3rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 60px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      animation: fadeInUp 1s ease-out 0.5s backwards;
-    }
-
-    .title-icons {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 3rem;
-      animation: fadeInUp 1s ease-out 0.7s backwards;
-    }
-
-    .title-icon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .title-icon-circle {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 2rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.3);
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .title-icon:hover .title-icon-circle {
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.25);
-    }
-
-    .title-icon-label {
-      font-size: 0.9rem;
+      font-weight: 300;
+      margin-top: 2rem;
       opacity: 0.9;
+      letter-spacing: 0.3em;
     }
 
-    .title-team {
-      position: absolute;
-      bottom: 3rem;
-      font-size: 1.1rem;
-      opacity: 0.8;
-      animation: fadeIn 1s ease-out 1s backwards;
+    .title-desc {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      padding: 1rem 3rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    @keyframes glow {
-      from { filter: drop-shadow(0 0 20px rgba(255,255,255,0.3)); }
-      to { filter: drop-shadow(0 0 40px rgba(255,255,255,0.6)); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 0.8; }
+      50% { transform: translateY(-20px); }
     }
 
     /* スライド2: コンセプト */
@@ -1044,9 +927,11 @@
       }
 
       .title-sub {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 1rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
+        text-align: center;
+        padding: 0 1rem;
       }
 
       .title-desc {
@@ -1497,32 +1382,10 @@
 
   <!-- スライド1: タイトル -->
   <section class="slide slide-1" id="slide-1">
-    <div class="title-container">
-      <div class="title-badge">🎮 認知症予防 × テクノロジー</div>
-      <h1 class="title-main">DA Fun Da</h1>
-      <p class="title-sub-en">Dementia prevention Activities with Fun Days</p>
-      <p class="title-sub">ダ・ファン・ダ</p>
-      <p class="title-tagline">🌟 楽しさを取り入れた認知症予防活動</p>
-      <div class="title-icons">
-        <div class="title-icon">
-          <div class="title-icon-circle">⌚</div>
-          <span class="title-icon-label">Fitbit</span>
-        </div>
-        <div class="title-icon">
-          <div class="title-icon-circle">🧠</div>
-          <span class="title-icon-label">脳波センサー</span>
-        </div>
-        <div class="title-icon">
-          <div class="title-icon-circle">🕶️</div>
-          <span class="title-icon-label">MRゲーム</span>
-        </div>
-        <div class="title-icon">
-          <div class="title-icon-circle">🌍</div>
-          <span class="title-icon-label">VR旅行</span>
-        </div>
-      </div>
-    </div>
-    <p class="title-team">Team: マジダイ</p>
+    <h1 class="title-main">DA Fun Da</h1>
+    <p class="title-sub">ダ・ファン・ダ</p>
+    <p class="title-sub">Dementia prevention Activities with Fun Days</p>
+    <p class="title-desc">楽しさを取り入れた認知症予防活動</p>
   </section>
 
   <!-- スライド2: コンセプト -->
