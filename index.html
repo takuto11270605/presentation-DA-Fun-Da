@@ -1873,7 +1873,7 @@
 
   <!-- スライド1: タイトル -->
   <section class="slide slide-1" id="slide-1">
-    <h1 class="title-main">DA Fun Da</h1>
+    <h1 class="title-main" id="secret-trigger">DA Fun Da</h1>
     <p class="title-sub">ダ・ファン・ダ</p>
     <p class="title-sub">Dementia prevention Activities with Fun Days</p>
     <p class="title-desc">楽しさを取り入れた認知症予防活動</p>
@@ -2442,6 +2442,43 @@
     function closeSecretModal() {
       const modal = document.getElementById('secret-modal');
       modal.classList.remove('active');
+    }
+
+    // 📱 スマホ用: タイトルロゴ20回タップで隠し画像表示
+    let tapCount = 0;
+    let tapTimer = null;
+    const secretTrigger = document.getElementById('secret-trigger');
+    
+    if (secretTrigger) {
+      secretTrigger.addEventListener('click', () => {
+        tapCount++;
+        
+        // 3秒以内に次のタップがなければリセット
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => { tapCount = 0; }, 3000);
+        
+        if (tapCount >= 20) {
+          showSecretImage();
+          tapCount = 0;
+          clearTimeout(tapTimer);
+        }
+      });
+      
+      // タッチイベントもサポート
+      secretTrigger.addEventListener('touchend', (e) => {
+        // clickイベントとの二重発火を防ぐ
+        e.preventDefault();
+        tapCount++;
+        
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => { tapCount = 0; }, 3000);
+        
+        if (tapCount >= 20) {
+          showSecretImage();
+          tapCount = 0;
+          clearTimeout(tapTimer);
+        }
+      });
     }
 
     function createConfetti() {
