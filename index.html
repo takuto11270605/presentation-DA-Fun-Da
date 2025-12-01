@@ -675,6 +675,109 @@
       font-weight: 600;
     }
 
+    /* 旅行が報酬である理由スライド */
+    .slide-travel-reason {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+
+    .travel-reason-container {
+      text-align: center;
+      max-width: 1300px;
+      padding: 0 2rem;
+    }
+
+    .travel-reason-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .travel-reason-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 2.5rem;
+    }
+
+    .travel-reason-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .travel-reason-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .travel-reason-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      backdrop-filter: blur(10px);
+      max-width: 380px;
+      text-align: left;
+      border-left: 4px solid #ffd93d;
+    }
+
+    .travel-reason-card.highlight {
+      background: rgba(255,215,0,0.15);
+      border-left: 4px solid #ffd93d;
+    }
+
+    .travel-reason-card.conclusion {
+      background: rgba(56,239,125,0.15);
+      border-left: 4px solid #38ef7d;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .travel-reason-card-num {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffd93d;
+      margin-bottom: 0.5rem;
+    }
+
+    .travel-reason-card.conclusion .travel-reason-card-num {
+      color: #38ef7d;
+    }
+
+    .travel-reason-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .travel-reason-card-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .travel-reason-arrow {
+      font-size: 2rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .travel-reason-footer {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      padding: 1.2rem 2.5rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+    }
+
     /* スライド9: VR旅行 */
     .slide-9 {
       background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
@@ -1341,6 +1444,57 @@
         padding: 1rem 1.5rem;
       }
 
+      /* 旅行が報酬である理由 */
+      .travel-reason-container {
+        padding: 0 1rem;
+      }
+
+      .travel-reason-badge {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.5rem;
+      }
+
+      .travel-reason-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .travel-reason-flow {
+        gap: 1rem;
+      }
+
+      .travel-reason-row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .travel-reason-card {
+        padding: 1.2rem;
+        max-width: 100%;
+      }
+
+      .travel-reason-card-num {
+        font-size: 1rem;
+      }
+
+      .travel-reason-card-title {
+        font-size: 1.1rem;
+      }
+
+      .travel-reason-card-desc {
+        font-size: 0.9rem;
+      }
+
+      .travel-reason-arrow {
+        font-size: 1.5rem;
+      }
+
+      .travel-reason-footer {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        margin-top: 1rem;
+      }
+
       /* スライド8: VR旅行 */
       .vr-container {
         padding: 0 1rem;
@@ -1502,7 +1656,7 @@
     <div class="page-indicator">
       <span class="page-current" id="current-page">1</span>
       <span class="page-separator">/</span>
-      <span class="page-total">16</span>
+      <span class="page-total">17</span>
     </div>
     <!-- ナビゲーションドット -->
     <nav class="nav">
@@ -1522,6 +1676,7 @@
       <div class="nav-dot" onclick="scrollToSlide(14)"></div>
       <div class="nav-dot" onclick="scrollToSlide(15)"></div>
       <div class="nav-dot" onclick="scrollToSlide(16)"></div>
+      <div class="nav-dot" onclick="scrollToSlide(17)"></div>
     </nav>
   </div>
 
@@ -1891,8 +2046,49 @@
     </div>
   </section>
 
-  <!-- スライド14: VR旅行デモ -->
-  <section class="slide slide-5" id="slide-14">
+  <!-- スライド14: 旅行が報酬である理由 -->
+  <section class="slide slide-travel-reason" id="slide-14">
+    <div class="travel-reason-container">
+      <span class="travel-reason-badge">📊 なぜ旅行が報酬なのか？</span>
+      <h2 class="travel-reason-title">高齢者に最も人気な趣味は「旅行」</h2>
+      <div class="travel-reason-flow">
+        <div class="travel-reason-row">
+          <div class="travel-reason-card highlight">
+            <div class="travel-reason-card-num">FACT 1</div>
+            <div class="travel-reason-card-title">🌟 シニアの趣味第1位は「国内旅行」</div>
+            <div class="travel-reason-card-desc">55歳以上の男女を対象とした調査で、<br>国内旅行が趣味の第1位に選ばれている</div>
+          </div>
+          <div class="travel-reason-card">
+            <div class="travel-reason-card-num">FACT 2</div>
+            <div class="travel-reason-card-title">📉 75歳を境に趣味人口が半減</div>
+            <div class="travel-reason-card-desc">75歳以上ではアクティブな趣味（旅行含む）<br>を持つ人は約半分に減少する</div>
+          </div>
+        </div>
+        <div class="travel-reason-arrow">↓</div>
+        <div class="travel-reason-row">
+          <div class="travel-reason-card">
+            <div class="travel-reason-card-num">INSIGHT</div>
+            <div class="travel-reason-card-title">💡 それでも旅行が1位</div>
+            <div class="travel-reason-card-desc">75歳以上を含む調査でも旅行が1位ということは、<br>旅行が高齢者に非常に人気である証拠</div>
+          </div>
+          <div class="travel-reason-card">
+            <div class="travel-reason-card-num">FACT 3</div>
+            <div class="travel-reason-card-title">⚠️ 認知症は発症してからでは遅い</div>
+            <div class="travel-reason-card-desc">50代・60代はまだ認知症発症率が低く、<br>予防の観点から最も効果的な年齢層</div>
+          </div>
+        </div>
+        <div class="travel-reason-arrow">↓</div>
+        <div class="travel-reason-card conclusion">
+          <div class="travel-reason-card-num">CONCLUSION</div>
+          <div class="travel-reason-card-title">✨ 旅行を報酬として組み込んだ</div>
+          <div class="travel-reason-card-desc">高齢者に人気の旅行を報酬にすることで、<br>認知症予防へのモチベーションを高める</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド15: VR旅行デモ -->
+  <section class="slide slide-5" id="slide-15">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -1902,8 +2098,8 @@
     </div>
   </section>
 
-  <!-- スライド15: VR旅行中画面 -->
-  <section class="slide slide-5" id="slide-15">
+  <!-- スライド16: VR旅行中画面 -->
+  <section class="slide slide-5" id="slide-16">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行中画面</span>
       <h2 class="demo-title">実際の旅行中の画面（Arrival.Space内）</h2>
@@ -1913,8 +2109,8 @@
     </div>
   </section>
 
-  <!-- スライド16: まとめ -->
-  <section class="slide slide-11" id="slide-16">
+  <!-- スライド17: まとめ -->
+  <section class="slide slide-11" id="slide-17">
     <div class="summary-container">
       <h2 class="summary-title">認知症予防は、楽しみながら</h2>
       <div class="summary-points">
