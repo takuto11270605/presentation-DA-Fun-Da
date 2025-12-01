@@ -373,6 +373,94 @@
       opacity: 0.85;
     }
 
+    /* コグニサイズスライド */
+    .slide-cogni {
+      background: linear-gradient(135deg, #e65c00 0%, #f9d423 100%);
+    }
+
+    .cogni-container {
+      text-align: center;
+      max-width: 1200px;
+      padding: 0 2rem;
+    }
+
+    .cogni-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .cogni-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .cogni-subtitle {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+    }
+
+    .cogni-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cogni-card {
+      background: rgba(0,0,0,0.2);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(10px);
+      min-width: 280px;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .cogni-card-emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .cogni-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .cogni-card-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .cogni-arrow {
+      font-size: 3rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .cogni-footer {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      padding: 1.5rem 3rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    .cogni-footer-highlight {
+      font-weight: 900;
+      color: #fff;
+    }
+
     /* スライド7: 脳波連動 */
     .slide-7 {
       background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
@@ -1197,6 +1285,62 @@
         font-size: 0.9rem;
       }
 
+      /* コグニサイズ */
+      .cogni-container {
+        padding: 0 1rem;
+      }
+
+      .cogni-badge {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.5rem;
+      }
+
+      .cogni-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .cogni-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .cogni-flow {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cogni-card {
+        padding: 1.5rem;
+        min-width: auto;
+        width: 100%;
+      }
+
+      .cogni-card-emoji {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .cogni-card-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .cogni-card-desc {
+        font-size: 0.95rem;
+      }
+
+      .cogni-arrow {
+        font-size: 2rem;
+        transform: rotate(90deg);
+      }
+
+      .cogni-footer {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+
       /* スライド8: VR旅行 */
       .vr-container {
         padding: 0 1rem;
@@ -1358,7 +1502,7 @@
     <div class="page-indicator">
       <span class="page-current" id="current-page">1</span>
       <span class="page-separator">/</span>
-      <span class="page-total">15</span>
+      <span class="page-total">16</span>
     </div>
     <!-- ナビゲーションドット -->
     <nav class="nav">
@@ -1377,6 +1521,7 @@
       <div class="nav-dot" onclick="scrollToSlide(13)"></div>
       <div class="nav-dot" onclick="scrollToSlide(14)"></div>
       <div class="nav-dot" onclick="scrollToSlide(15)"></div>
+      <div class="nav-dot" onclick="scrollToSlide(16)"></div>
     </nav>
   </div>
 
@@ -1433,6 +1578,7 @@
         <p class="feature-desc">
           4種類の脳トレゲームで<br>
           楽しく認知機能をトレーニング。<br>
+          プレイ中は足を使って操作。<br>
           脳波連動で集中度を測定。
         </p>
       </div>
@@ -1442,7 +1588,7 @@
         <p class="feature-desc">
           世界中の観光地を<br>
           バーチャルで旅行体験。<br>
-          ゲームで貯めたコインで解放。
+          ゲームコインと歩数で解放。
         </p>
       </div>
     </div>
@@ -1525,8 +1671,37 @@
     </div>
   </section>
 
-  <!-- スライド7: MRゲームデモ -->
-  <section class="slide slide-5" id="slide-7">
+  <!-- スライド7: コグニサイズ説明 -->
+  <section class="slide slide-cogni" id="slide-7">
+    <div class="cogni-container">
+      <span class="cogni-badge">🦶 コグニサイズ</span>
+      <h2 class="cogni-title">ゲーム中は「足」で操作</h2>
+      <p class="cogni-subtitle">認知症予防に効果的な「コグニサイズ」を実現</p>
+      <div class="cogni-flow">
+        <div class="cogni-card">
+          <div class="cogni-card-emoji">🧠</div>
+          <h3 class="cogni-card-title">頭で考える</h3>
+          <p class="cogni-card-desc">クイズや計算など<br>認知課題に取り組む</p>
+        </div>
+        <div class="cogni-arrow">＋</div>
+        <div class="cogni-card">
+          <div class="cogni-card-emoji">🦶</div>
+          <h3 class="cogni-card-title">足で動かす</h3>
+          <p class="cogni-card-desc">足踏み操作で<br>体を動かしながらプレイ</p>
+        </div>
+        <div class="cogni-arrow">＝</div>
+        <div class="cogni-card">
+          <div class="cogni-card-emoji">✨</div>
+          <h3 class="cogni-card-title">コグニサイズ</h3>
+          <p class="cogni-card-desc">認知課題と運動課題の<br>同時実行で認知症予防</p>
+        </div>
+      </div>
+      <p class="cogni-footer"><span class="cogni-footer-highlight">コグニサイズ</span>とは、国立長寿医療研究センターが開発した<br>認知症予防を目的とした取り組みです</p>
+    </div>
+  </section>
+
+  <!-- スライド8: MRゲームデモ -->
+  <section class="slide slide-5" id="slide-8">
     <div class="demo-container">
       <span class="demo-badge">🎮 MRゲーム画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -1536,8 +1711,8 @@
     </div>
   </section>
 
-  <!-- スライド8: MRゲーム動画 -->
-  <section class="slide slide-5" id="slide-8">
+  <!-- スライド9: MRゲーム動画 -->
+  <section class="slide slide-5" id="slide-9">
     <div class="demo-container">
       <span class="demo-badge">🎮 MRゲームプレイ動画</span>
       <h2 class="demo-title">実際のプレイ映像</h2>
@@ -1547,8 +1722,8 @@
     </div>
   </section>
 
-  <!-- スライド9: 脳波連動 -->
-  <section class="slide slide-7" id="slide-9">
+  <!-- スライド10: 脳波連動 -->
+  <section class="slide slide-7" id="slide-10">
     <div class="eeg-container">
       <span class="eeg-badge">脳波取得</span>
       <h2 class="eeg-title">4つの脳波で集中力を可視化</h2>
@@ -1587,8 +1762,8 @@
     </div>
   </section>
 
-  <!-- スライド10: 集中パターンの種類 -->
-  <section class="slide slide-8" id="slide-10">
+  <!-- スライド11: 集中パターンの種類 -->
+  <section class="slide slide-8" id="slide-11">
     <div class="pattern-container">
       <h2 class="pattern-title">3つの集中パターン</h2>
       <p class="pattern-subtitle">脳波データから分析された、ユーザーの集中タイプを判定</p>
@@ -1639,8 +1814,8 @@
     </div>
   </section>
 
-  <!-- スライド11: AI提案 -->
-  <section class="slide slide-10" id="slide-11">
+  <!-- スライド12: AI提案 -->
+  <section class="slide slide-10" id="slide-12">
     <div class="ai-container">
       <div class="ai-left">
         <span class="ai-badge">✨ Smart Suggestion</span>
@@ -1686,8 +1861,8 @@
     </div>
   </section>
 
-  <!-- スライド12: VR旅行 -->
-  <section class="slide slide-9" id="slide-12">
+  <!-- スライド13: VR旅行 -->
+  <section class="slide slide-9" id="slide-13">
     <div class="vr-container">
       <span class="vr-badge">🌍VR旅行機能</span>
       <h2 class="vr-title">ゲームのご褒美は、旅行</h2>
@@ -1722,8 +1897,8 @@
     </div>
   </section>
 
-  <!-- スライド13: VR旅行デモ -->
-  <section class="slide slide-5" id="slide-13">
+  <!-- スライド14: VR旅行デモ -->
+  <section class="slide slide-5" id="slide-14">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -1733,8 +1908,8 @@
     </div>
   </section>
 
-  <!-- スライド14: VR旅行中画面 -->
-  <section class="slide slide-5" id="slide-14">
+  <!-- スライド15: VR旅行中画面 -->
+  <section class="slide slide-5" id="slide-15">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行中画面</span>
       <h2 class="demo-title">実際の旅行中の画面（Arrival.Space内）</h2>
@@ -1744,8 +1919,8 @@
     </div>
   </section>
 
-  <!-- スライド15: まとめ -->
-  <section class="slide slide-11" id="slide-15">
+  <!-- スライド16: まとめ -->
+  <section class="slide slide-11" id="slide-16">
     <div class="summary-container">
       <h2 class="summary-title">認知症予防は、楽しみながら</h2>
       <div class="summary-points">
