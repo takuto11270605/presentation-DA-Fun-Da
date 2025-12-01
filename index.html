@@ -2395,8 +2395,33 @@
 
     slides.forEach(slide => observer.observe(slide));
 
-    // キーボードナビゲーション
+    // 🎮 コナミコマンド: ↑↑↓↓←→←→BA
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+    let konamiTimer = null;
+
+    // キーボードナビゲーション（コナミコマンド優先）
     document.addEventListener('keydown', (e) => {
+      // コナミコマンドのチェック
+      const expectedKey = konamiCode[konamiIndex];
+      if (e.key === expectedKey || e.key.toLowerCase() === expectedKey) {
+        konamiIndex++;
+        // タイマーリセット（3秒以内に次のキーを押す必要がある）
+        clearTimeout(konamiTimer);
+        konamiTimer = setTimeout(() => { konamiIndex = 0; }, 3000);
+        
+        if (konamiIndex === konamiCode.length) {
+          showSecretImage();
+          konamiIndex = 0;
+          clearTimeout(konamiTimer);
+          return; // コマンド成功時は他の処理をスキップ
+        }
+      } else if (konamiIndex > 0 && (e.key.startsWith('Arrow') || e.key === 'b' || e.key === 'a' || e.key === 'B' || e.key === 'A')) {
+        // コナミコマンド入力中に間違えた場合のみリセット
+        konamiIndex = 0;
+      }
+
+      // 通常のスライドナビゲーション
       const current = Array.from(dots).findIndex(d => d.classList.contains('active'));
       if (e.key === 'ArrowDown' || e.key === ' ') {
         e.preventDefault();
@@ -2404,22 +2429,6 @@
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
         if (current > 0) scrollToSlide(current);
-      }
-    });
-
-    // 🎮 コナミコマンド: ↑↑↓↓←→←→BA
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-          showSecretImage();
-          konamiIndex = 0;
-        }
-      } else {
-        konamiIndex = 0;
       }
     });
 
