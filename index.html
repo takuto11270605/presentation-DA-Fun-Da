@@ -659,6 +659,120 @@
       50% { opacity: 0.7; }
     }
 
+    /* 集中度算出方法スライド */
+    .slide-focus-calc {
+      background: #0f172a;
+    }
+
+    .focus-calc-container {
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    .focus-calc-badge {
+      display: inline-block;
+      background: #8b5cf6;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .focus-calc-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      color: #f1f5f9;
+    }
+
+    .focus-calc-formula {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      color: #a78bfa;
+      font-family: 'Courier New', monospace;
+    }
+
+    .focus-calc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .focus-calc-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 1.8rem 1.5rem;
+      border-left: 4px solid #8b5cf6;
+    }
+
+    .focus-calc-card-num {
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: #a78bfa;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .focus-calc-card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #f1f5f9;
+    }
+
+    .focus-calc-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .focus-calc-card-list li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 0.4rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .focus-calc-card-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #8b5cf6;
+    }
+
+    .focus-calc-card-evidence {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-left: 3px solid #22c55e;
+    }
+
+    .focus-calc-card-evidence-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4ade80;
+      margin-bottom: 0.3rem;
+    }
+
+    .focus-calc-card-evidence-text {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .focus-calc-card-source {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+
     /* スライド8: 集中パターン */
     .slide-8 {
       background: #1e293b;
@@ -1232,6 +1346,8 @@
       .ai-container { flex-direction: column; gap: 3rem; }
       .vr-features { flex-direction: column; gap: 2rem; }
       .summary-points { flex-wrap: wrap; gap: 1.5rem; }
+      .focus-calc-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .focus-calc-formula { font-size: 2rem; }
     }
 
     /* レスポンシブ - スマートフォン */
@@ -1882,6 +1998,72 @@
         font-size: 2.5rem;
         margin-top: 1.5rem;
       }
+
+      /* 集中度算出方法スライド - スマホ */
+      .focus-calc-container {
+        padding: 0 1rem;
+      }
+
+      .focus-calc-badge {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .focus-calc-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .focus-calc-formula {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+        background: rgba(139, 92, 246, 0.1);
+        border-radius: 8px;
+      }
+
+      .focus-calc-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .focus-calc-card {
+        padding: 1.2rem;
+      }
+
+      .focus-calc-card-num {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .focus-calc-card-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .focus-calc-card-list li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0.3rem;
+      }
+
+      .focus-calc-card-evidence {
+        padding: 0.8rem;
+        margin-top: 0.8rem;
+      }
+
+      .focus-calc-card-evidence-title {
+        font-size: 0.75rem;
+      }
+
+      .focus-calc-card-evidence-text {
+        font-size: 0.8rem;
+      }
+
+      .focus-calc-card-source {
+        font-size: 0.7rem;
+      }
     }
 
     /* 超小型スマホ対応 */
@@ -1976,7 +2158,7 @@
     <div class="page-indicator">
       <span class="page-current" id="current-page">1</span>
       <span class="page-separator">/</span>
-      <span class="page-total">19</span>
+      <span class="page-total">20</span>
     </div>
     <!-- ナビゲーションドット -->
     <nav class="nav">
@@ -1999,6 +2181,7 @@
       <div class="nav-dot" onclick="scrollToSlide(17)"></div>
       <div class="nav-dot" onclick="scrollToSlide(18)"></div>
       <div class="nav-dot" onclick="scrollToSlide(19)"></div>
+      <div class="nav-dot" onclick="scrollToSlide(20)"></div>
     </nav>
   </div>
 
@@ -2272,8 +2455,45 @@
     </div>
   </section>
 
-  <!-- スライド12: 集中パターンの種類 -->
-  <section class="slide slide-8" id="slide-12">
+  <!-- スライド12: 集中度の算出方法 -->
+  <section class="slide slide-focus-calc" id="slide-12">
+    <div class="focus-calc-container">
+      <span class="focus-calc-badge">📊 算出ロジック</span>
+      <h2 class="focus-calc-title">集中度の算出方法について</h2>
+      <div class="focus-calc-formula">集中度 = β波 / (α波 + θ波)</div>
+      <div class="focus-calc-grid">
+        <div class="focus-calc-card">
+          <div class="focus-calc-card-num">理由 1</div>
+          <h3 class="focus-calc-card-title">加齢脳の特性に最適</h3>
+          <ul class="focus-calc-card-list">
+            <li>高齢者はα波・θ波が増加しやすく、β波が減少傾向</li>
+            <li>これらの変化を同時に捉えることで、加齢による集中力変化を正確に評価</li>
+          </ul>
+        </div>
+        <div class="focus-calc-card">
+          <div class="focus-calc-card-num">理由 2</div>
+          <h3 class="focus-calc-card-title">認知的エンゲージメント</h3>
+          <ul class="focus-calc-card-list">
+            <li>β波: 認知課題中に上昇</li>
+            <li>α波・θ波: リラックス・ぼんやり時に増加</li>
+            <li>比率式により「集中 vs 非集中」を明確化</li>
+          </ul>
+        </div>
+        <div class="focus-calc-card">
+          <div class="focus-calc-card-num">理由 3</div>
+          <h3 class="focus-calc-card-title">研究による実証</h3>
+          <div class="focus-calc-card-evidence">
+            <div class="focus-calc-card-evidence-title">📄 研究エビデンス</div>
+            <p class="focus-calc-card-evidence-text">高齢者の注意機能と脳波帯域パワー比の相関が報告されている</p>
+            <p class="focus-calc-card-source">Pino, D.J., & Romano, R.F. (2022)<br>Ahmed, M.I. et al. (2025)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド13: 集中パターンの種類 -->
+  <section class="slide slide-8" id="slide-13">
     <div class="pattern-container">
       <h2 class="pattern-title">3つの集中パターン</h2>
       <p class="pattern-subtitle">脳波データから分析された、ユーザーの集中タイプを判定</p>
@@ -2324,8 +2544,8 @@
     </div>
   </section>
 
-  <!-- スライド13: AI提案 -->
-  <section class="slide slide-10" id="slide-13">
+  <!-- スライド14: AI提案 -->
+  <section class="slide slide-10" id="slide-14">
     <div class="ai-container">
       <div class="ai-left">
         <span class="ai-badge">✨ ユーザーへの提案</span>
@@ -2364,8 +2584,8 @@
     </div>
   </section>
 
-  <!-- スライド14: VR旅行 -->
-  <section class="slide slide-9" id="slide-14">
+  <!-- スライド15: VR旅行 -->
+  <section class="slide slide-9" id="slide-15">
     <div class="vr-container">
       <span class="vr-badge">🌍 VR旅行機能</span>
       <h2 class="vr-title">ゲームのご褒美は、旅行</h2>
@@ -2400,8 +2620,8 @@
     </div>
   </section>
 
-  <!-- スライド15: 旅行が報酬である理由 -->
-  <section class="slide slide-travel-reason" id="slide-15">
+  <!-- スライド16: 旅行が報酬である理由 -->
+  <section class="slide slide-travel-reason" id="slide-16">
     <div class="travel-reason-container">
       <span class="travel-reason-badge">📊 なぜ旅行が報酬なのか？</span>
       <h2 class="travel-reason-title">高齢者に最も人気な趣味は「旅行」</h2>
@@ -2423,8 +2643,8 @@
     </div>
   </section>
 
-  <!-- スライド16: VR旅行の論理的根拠 -->
-  <section class="slide slide-vr-logic" id="slide-16">
+  <!-- スライド17: VR旅行の論理的根拠 -->
+  <section class="slide slide-vr-logic" id="slide-17">
     <div class="vr-logic-container">
       <span class="vr-logic-badge">🧠 VR旅行の論理的根拠</span>
       <h2 class="vr-logic-title">なぜ「VR旅行」が高齢者の報酬として機能するのか？</h2>
@@ -2463,8 +2683,8 @@
     </div>
   </section>
 
-  <!-- スライド17: VR旅行デモ -->
-  <section class="slide slide-5" id="slide-17">
+  <!-- スライド18: VR旅行デモ -->
+  <section class="slide slide-5" id="slide-18">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -2474,8 +2694,8 @@
     </div>
   </section>
 
-  <!-- スライド18: VR旅行中画面 -->
-  <section class="slide slide-5" id="slide-18">
+  <!-- スライド19: VR旅行中画面 -->
+  <section class="slide slide-5" id="slide-19">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行中画面</span>
       <h2 class="demo-title">実際の旅行中の画面（Arrival.Space内）</h2>
@@ -2485,8 +2705,8 @@
     </div>
   </section>
 
-  <!-- スライド19: まとめ -->
-  <section class="slide slide-11" id="slide-19">
+  <!-- スライド20: まとめ -->
+  <section class="slide slide-11" id="slide-20">
     <div class="summary-container">
       <h2 class="summary-title">認知症予防は、楽しみながら</h2>
       <div class="summary-points">
