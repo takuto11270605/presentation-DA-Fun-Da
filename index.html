@@ -33,15 +33,14 @@
 
     /* スライド1: タイトル */
     .slide-1 {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background: #1a365d;
     }
 
     .title-main {
       font-size: 8rem;
       font-weight: 900;
       letter-spacing: 0.1em;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      animation: float 3s ease-in-out infinite;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
     .title-sub {
@@ -56,19 +55,14 @@
       font-size: 1.5rem;
       margin-top: 3rem;
       padding: 1rem 3rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50px;
-      backdrop-filter: blur(10px);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
     }
 
     /* スライド2: コンセプト */
     .slide-2 {
-      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+      background: #1e293b;
+      color: #f1f5f9;
     }
 
     .concept-container {
@@ -81,20 +75,18 @@
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 3rem;
-      background: linear-gradient(90deg, #00d4ff, #7c3aed, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #f1f5f9;
     }
 
     .concept-text {
       font-size: 1.8rem;
       line-height: 2.2;
       font-weight: 300;
+      color: #cbd5e1;
     }
 
     .highlight {
-      color: #00d4ff;
+      color: #60a5fa;
       font-weight: 700;
     }
 
@@ -107,22 +99,26 @@
 
     .concept-icon {
       text-align: center;
+      background: rgba(255,255,255,0.05);
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
     }
 
     .concept-icon-emoji {
-      font-size: 5rem;
+      font-size: 4rem;
       display: block;
       margin-bottom: 1rem;
     }
 
     .concept-icon-text {
-      font-size: 1.2rem;
-      opacity: 0.8;
+      font-size: 1.5rem;
+      color: #f1f5f9;
+      font-weight: 700;
     }
 
     /* スライド3: 3つの機能 */
     .slide-3 {
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      background: #0f172a;
     }
 
     .features-title {
@@ -140,23 +136,24 @@
     }
 
     .feature-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 24px;
+      background: #1e293b;
+      border: none;
+      border-radius: 12px;
       padding: 3rem 2rem;
       text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
+      color: #f1f5f9;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .feature-card:nth-child(1) { border-top: 4px solid #00d4ff; }
-    .feature-card:nth-child(2) { border-top: 4px solid #7c3aed; }
-    .feature-card:nth-child(3) { border-top: 4px solid #f472b6; }
+    .feature-card:nth-child(1) { border-left: 4px solid #3b82f6; }
+    .feature-card:nth-child(2) { border-left: 4px solid #10b981; }
+    .feature-card:nth-child(3) { border-left: 4px solid #f59e0b; }
 
     .feature-emoji {
       font-size: 4rem;
@@ -167,17 +164,18 @@
       font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: #f1f5f9;
     }
 
     .feature-desc {
       font-size: 1.1rem;
-      opacity: 0.8;
+      color: #94a3b8;
       line-height: 1.8;
     }
 
     /* スライド4: 一元管理 */
     .slide-4 {
-      background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+      background: #1e293b;
     }
 
     .dashboard-container {
@@ -194,10 +192,10 @@
 
     .dashboard-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #3b82f6;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -216,7 +214,7 @@
 
     .dashboard-list li::before {
       content: "✓ ";
-      color: #90EE90;
+      color: #34d399;
       font-weight: bold;
     }
 
@@ -228,10 +226,9 @@
     }
 
     .stat-card {
-      background: rgba(255,255,255,0.15);
-      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
       padding: 2rem;
-      backdrop-filter: blur(10px);
     }
 
     .stat-label {
@@ -245,14 +242,14 @@
       font-weight: 900;
     }
 
-    .stat-card:nth-child(1) .stat-value { color: #90EE90; }
-    .stat-card:nth-child(2) .stat-value { color: #FFD700; }
-    .stat-card:nth-child(3) .stat-value { color: #FF6B6B; }
-    .stat-card:nth-child(4) .stat-value { color: #87CEEB; }
+    .stat-card:nth-child(1) .stat-value { color: #34d399; }
+    .stat-card:nth-child(2) .stat-value { color: #fbbf24; }
+    .stat-card:nth-child(3) .stat-value { color: #f87171; }
+    .stat-card:nth-child(4) .stat-value { color: #60a5fa; }
 
     /* スライド5: アプリデモ */
     .slide-5 {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      background: #1e293b;
     }
 
     .demo-container {
@@ -263,10 +260,10 @@
 
     .demo-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #3b82f6;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -275,7 +272,7 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      opacity: 0.9;
+      color: #94a3b8;
     }
 
     .demo-screenshot {
@@ -288,27 +285,27 @@
 
     .demo-frame {
       background: #fff;
-      border-radius: 20px;
+      border-radius: 12px;
       padding: 8px;
       display: inline-block;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     }
 
     .demo-frame img {
       display: block;
       max-height: 80vh;
-      border-radius: 12px;
+      border-radius: 8px;
     }
 
     .demo-frame video {
       display: block;
       max-height: 80vh;
-      border-radius: 12px;
+      border-radius: 8px;
     }
 
     /* スライド6: MRゲーム */
     .slide-6 {
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+      background: #0f172a;
     }
 
     .mr-container {
@@ -318,10 +315,10 @@
 
     .mr-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #f59e0b;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -346,15 +343,15 @@
     }
 
     .game-card {
-      background: rgba(0,0,0,0.2);
-      border-radius: 20px;
+      background: #1e293b;
+      border-radius: 12px;
       padding: 2rem 1.5rem;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s;
+      transition: transform 0.2s;
+      border-left: 4px solid #f59e0b;
     }
 
     .game-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .game-emoji {
@@ -370,12 +367,12 @@
 
     .game-desc {
       font-size: 0.95rem;
-      opacity: 0.85;
+      color: #94a3b8;
     }
 
     /* AR/VR/MRの違いスライド */
     .slide-xr {
-      background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+      background: #0f172a;
     }
 
     .xr-container {
@@ -397,22 +394,23 @@
     }
 
     .xr-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 24px;
+      background: #1e293b;
+      border-radius: 12px;
       padding: 2.5rem 2rem;
-      backdrop-filter: blur(10px);
       text-align: left;
-      transition: transform 0.3s, box-shadow 0.3s;
+      color: #f1f5f9;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .xr-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .xr-card:nth-child(1) { border-top: 4px solid #00d4ff; }
-    .xr-card:nth-child(2) { border-top: 4px solid #7c3aed; }
-    .xr-card:nth-child(3) { border-top: 4px solid #f472b6; }
+    .xr-card:nth-child(1) { border-left: 4px solid #3b82f6; }
+    .xr-card:nth-child(2) { border-left: 4px solid #8b5cf6; }
+    .xr-card:nth-child(3) { border-left: 4px solid #ec4899; }
 
     .xr-card-header {
       display: flex;
@@ -430,33 +428,33 @@
       font-weight: 900;
     }
 
-    .xr-card:nth-child(1) .xr-card-name { color: #00d4ff; }
-    .xr-card:nth-child(2) .xr-card-name { color: #7c3aed; }
+    .xr-card:nth-child(1) .xr-card-name { color: #60a5fa; }
+    .xr-card:nth-child(2) .xr-card-name { color: #a78bfa; }
     .xr-card:nth-child(3) .xr-card-name { color: #f472b6; }
 
     .xr-card-subtitle {
       font-size: 1.1rem;
-      opacity: 0.8;
+      color: #94a3b8;
       margin-bottom: 1.5rem;
     }
 
     .xr-card-desc {
       font-size: 1.1rem;
       line-height: 1.8;
-      opacity: 0.9;
+      color: #cbd5e1;
     }
 
     .xr-card-device {
       margin-top: 1.5rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.1);
       font-size: 0.95rem;
-      opacity: 0.7;
+      color: #64748b;
     }
 
     /* コグニサイズスライド */
     .slide-cogni {
-      background: linear-gradient(135deg, #e65c00 0%, #f9d423 100%);
+      background: #1e293b;
     }
 
     .cogni-container {
@@ -467,10 +465,10 @@
 
     .cogni-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #10b981;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -483,7 +481,7 @@
 
     .cogni-subtitle {
       font-size: 1.5rem;
-      opacity: 0.9;
+      color: #94a3b8;
       margin-bottom: 3rem;
     }
 
@@ -496,13 +494,13 @@
     }
 
     .cogni-card {
-      background: rgba(0,0,0,0.2);
-      border-radius: 24px;
+      background: #0f172a;
+      border-radius: 12px;
       padding: 2.5rem 2rem;
-      backdrop-filter: blur(10px);
       min-width: 280px;
       max-width: 320px;
       text-align: center;
+      border-left: 4px solid #10b981;
     }
 
     .cogni-card-emoji {
@@ -519,22 +517,22 @@
     .cogni-card-desc {
       font-size: 1.1rem;
       line-height: 1.6;
-      opacity: 0.9;
+      color: #94a3b8;
     }
 
     .cogni-arrow {
       font-size: 3rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.4);
     }
 
     .cogni-footer {
       margin-top: 3rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       padding: 1.5rem 3rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50px;
+      background: #0f172a;
+      border-radius: 8px;
       display: inline-block;
-      backdrop-filter: blur(10px);
+      color: #cbd5e1;
     }
 
     .cogni-footer-highlight {
@@ -544,7 +542,7 @@
 
     /* スライド7: 脳波連動 */
     .slide-7 {
-      background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
+      background: #0f172a;
     }
 
     .eeg-container {
@@ -555,10 +553,10 @@
 
     .eeg-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #8b5cf6;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -571,7 +569,7 @@
 
     .eeg-subtitle {
       font-size: 1.4rem;
-      opacity: 0.9;
+      color: #94a3b8;
       margin-bottom: 3rem;
     }
 
@@ -583,18 +581,17 @@
     }
 
     .wave-card {
-      background: rgba(0,0,0,0.25);
-      border-radius: 24px;
+      background: #1e293b;
+      border-radius: 12px;
       padding: 2.5rem 2rem;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
     }
 
     .wave-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     }
 
     .wave-card:nth-child(1) { border-top: 4px solid #ff6b6b; }
@@ -645,12 +642,11 @@
 
     .eeg-footer {
       font-size: 1.2rem;
-      opacity: 0.85;
       padding: 1.5rem 3rem;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50px;
+      background: #1e293b;
+      border-radius: 8px;
       display: inline-block;
-      backdrop-filter: blur(10px);
+      color: #cbd5e1;
     }
 
     .wave-item:nth-child(1) .wave-fill { background: #ff6b6b; width: 45%; }
@@ -665,7 +661,7 @@
 
     /* スライド8: 集中パターン */
     .slide-8 {
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      background: #1e293b;
     }
 
     .pattern-container {
@@ -693,23 +689,24 @@
     }
 
     .pattern-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 24px;
+      background: #1e293b;
+      border: none;
+      border-radius: 12px;
       padding: 3rem 2rem;
       text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
+      color: #f1f5f9;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .pattern-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     }
 
-    .pattern-card:nth-child(1) { border-top: 4px solid #00d4ff; }
-    .pattern-card:nth-child(2) { border-top: 4px solid #ffd93d; }
-    .pattern-card:nth-child(3) { border-top: 4px solid #ff6b6b; }
+    .pattern-card:nth-child(1) { border-left: 4px solid #3b82f6; }
+    .pattern-card:nth-child(2) { border-left: 4px solid #eab308; }
+    .pattern-card:nth-child(3) { border-left: 4px solid #ef4444; }
 
     .pattern-icon {
       font-size: 4rem;
@@ -722,32 +719,32 @@
       margin-bottom: 0.5rem;
     }
 
-    .pattern-card:nth-child(1) .pattern-name { color: #00d4ff; }
-    .pattern-card:nth-child(2) .pattern-name { color: #ffd93d; }
-    .pattern-card:nth-child(3) .pattern-name { color: #ff6b6b; }
+    .pattern-card:nth-child(1) .pattern-name { color: #60a5fa; }
+    .pattern-card:nth-child(2) .pattern-name { color: #facc15; }
+    .pattern-card:nth-child(3) .pattern-name { color: #f87171; }
 
     .pattern-type {
       font-size: 1rem;
-      opacity: 0.7;
+      color: #64748b;
       margin-bottom: 1.5rem;
     }
 
     .pattern-desc {
       font-size: 1.1rem;
       line-height: 1.8;
-      opacity: 0.8;
+      color: #94a3b8;
       margin-bottom: 1.5rem;
     }
 
     .pattern-recommend {
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
+      background: #0f172a;
+      border-radius: 8px;
       padding: 1rem 1.5rem;
     }
 
     .pattern-recommend-label {
       font-size: 0.85rem;
-      opacity: 0.7;
+      color: #64748b;
       margin-bottom: 0.3rem;
     }
 
@@ -758,7 +755,7 @@
 
     /* 旅行が報酬である理由スライド */
     .slide-travel-reason {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: #0f172a;
     }
 
     .travel-reason-container {
@@ -769,18 +766,20 @@
 
     .travel-reason-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #1e40af;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.4rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
+      color: #fff;
     }
 
     .travel-reason-title {
       font-size: 2.8rem;
       font-weight: 900;
       margin-bottom: 2.5rem;
+      color: #f1f5f9;
     }
 
     .travel-reason-flow {
@@ -799,69 +798,157 @@
     }
 
     .travel-reason-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 1.8rem 1.5rem;
-      backdrop-filter: blur(10px);
-      max-width: 380px;
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem 1.8rem;
+      max-width: 500px;
       text-align: left;
-      border-left: 4px solid #ffd93d;
+      border-left: 5px solid #fbbf24;
     }
 
     .travel-reason-card.highlight {
-      background: rgba(255,215,0,0.15);
-      border-left: 4px solid #ffd93d;
+      background: #1e293b;
+      border-left: 5px solid #fbbf24;
     }
 
     .travel-reason-card.conclusion {
-      background: rgba(56,239,125,0.15);
-      border-left: 4px solid #38ef7d;
-      max-width: 600px;
+      background: #064e3b;
+      border-left: 5px solid #34d399;
+      max-width: 700px;
       text-align: center;
     }
 
     .travel-reason-card-num {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       font-weight: 900;
-      color: #ffd93d;
-      margin-bottom: 0.5rem;
+      color: #fbbf24;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1em;
     }
 
     .travel-reason-card.conclusion .travel-reason-card-num {
-      color: #38ef7d;
+      color: #34d399;
     }
 
     .travel-reason-card-title {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      color: #f1f5f9;
     }
 
     .travel-reason-card-desc {
-      font-size: 1rem;
-      line-height: 1.6;
-      opacity: 0.9;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #cbd5e1;
     }
 
     .travel-reason-arrow {
       font-size: 2rem;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.4);
     }
 
     .travel-reason-footer {
       margin-top: 2rem;
       font-size: 1.4rem;
       padding: 1.2rem 2.5rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50px;
+      background: #1e40af;
+      border-radius: 8px;
       display: inline-block;
-      backdrop-filter: blur(10px);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* VR旅行論理的根拠スライド */
+    .slide-vr-logic {
+      background: #0f172a;
+    }
+
+    .vr-logic-container {
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 2rem;
+    }
+
+    .vr-logic-badge {
+      display: inline-block;
+      background: #0ea5e9;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
       font-weight: 700;
     }
 
+    .vr-logic-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+
+    .vr-logic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .vr-logic-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: left;
+      transition: transform 0.2s;
+    }
+
+    .vr-logic-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .vr-logic-card:nth-child(1) { border-left: 4px solid #ef4444; }
+    .vr-logic-card:nth-child(2) { border-left: 4px solid #eab308; }
+    .vr-logic-card:nth-child(3) { border-left: 4px solid #22c55e; }
+
+    .vr-logic-card-num {
+      font-size: 0.9rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    .vr-logic-card:nth-child(1) .vr-logic-card-num { color: #f87171; }
+    .vr-logic-card:nth-child(2) .vr-logic-card-num { color: #facc15; }
+    .vr-logic-card:nth-child(3) .vr-logic-card-num { color: #4ade80; }
+
+    .vr-logic-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: #f1f5f9;
+    }
+
+    .vr-logic-card-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #94a3b8;
+    }
+
+    .vr-logic-card-highlight {
+      background: #0f172a;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .vr-logic-card:nth-child(1) .vr-logic-card-highlight { border-left: 3px solid #ef4444; }
+    .vr-logic-card:nth-child(2) .vr-logic-card-highlight { border-left: 3px solid #eab308; }
+    .vr-logic-card:nth-child(3) .vr-logic-card-highlight { border-left: 3px solid #22c55e; }
+
     /* スライド9: VR旅行 */
     .slide-9 {
-      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      background: #1e293b;
     }
 
     .vr-container {
@@ -871,10 +958,10 @@
 
     .vr-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #10b981;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -887,7 +974,7 @@
 
     .vr-subtitle {
       font-size: 1.5rem;
-      opacity: 0.9;
+      color: #94a3b8;
       margin-bottom: 3rem;
     }
 
@@ -898,11 +985,11 @@
     }
 
     .vr-feature {
-      background: rgba(255,255,255,0.15);
-      border-radius: 24px;
+      background: #0f172a;
+      border-radius: 12px;
       padding: 3rem 2.5rem;
-      backdrop-filter: blur(10px);
       min-width: 280px;
+      border-left: 4px solid #10b981;
     }
 
     .vr-feature-emoji {
@@ -914,17 +1001,18 @@
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: #f1f5f9;
     }
 
     .vr-feature-desc {
       font-size: 1.1rem;
-      opacity: 0.9;
+      color: #94a3b8;
       line-height: 1.6;
     }
 
     /* スライド10: AI提案 */
     .slide-10 {
-      background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+      background: #0f172a;
     }
 
     .ai-container {
@@ -941,10 +1029,10 @@
 
     .ai-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.8rem;
+      background: #f59e0b;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
@@ -958,6 +1046,7 @@
     .ai-text {
       font-size: 1.3rem;
       line-height: 2;
+      color: #94a3b8;
     }
 
     .ai-right {
@@ -971,13 +1060,13 @@
     }
 
     .ai-card {
-      background: rgba(0,0,0,0.2);
-      border-radius: 20px;
+      background: #1e293b;
+      border-radius: 12px;
       padding: 1.5rem 2rem;
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      backdrop-filter: blur(10px);
+      border-left: 4px solid #f59e0b;
     }
 
     .ai-card-emoji {
@@ -990,18 +1079,19 @@
 
     .ai-card-type {
       font-size: 1rem;
-      opacity: 0.8;
+      color: #64748b;
       margin-bottom: 0.3rem;
     }
 
     .ai-card-msg {
       font-size: 1.2rem;
       font-weight: 600;
+      color: #f1f5f9;
     }
 
     /* スライド11: まとめ */
     .slide-11 {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background: #0f172a;
     }
 
     .summary-container {
@@ -1013,6 +1103,7 @@
       font-size: 3.5rem;
       font-weight: 900;
       margin-bottom: 3rem;
+      color: #f1f5f9;
     }
 
     .summary-points {
@@ -1023,11 +1114,11 @@
     }
 
     .summary-point {
-      background: rgba(255,255,255,0.15);
-      border-radius: 20px;
+      background: #1e293b;
+      border-radius: 12px;
       padding: 2rem;
-      backdrop-filter: blur(10px);
       min-width: 200px;
+      border-left: 4px solid #3b82f6;
     }
 
     .summary-point-emoji {
@@ -1038,6 +1129,7 @@
     .summary-point-text {
       font-size: 1.3rem;
       font-weight: 600;
+      color: #f1f5f9;
     }
 
     .summary-cta {
@@ -1045,10 +1137,10 @@
       font-weight: 300;
       margin-top: 2rem;
       padding: 1.5rem 4rem;
-      background: rgba(255,255,255,0.2);
-      border-radius: 60px;
+      background: #1e293b;
+      border-radius: 8px;
       display: inline-block;
-      backdrop-filter: blur(10px);
+      color: #cbd5e1;
     }
 
     .logo-end {
@@ -1074,18 +1166,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      backdrop-filter: blur(10px);
+      border-radius: 8px;
       font-weight: 700;
       font-size: 1.2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     .page-current {
       font-size: 2rem;
-      color: #00d4ff;
+      color: #60a5fa;
       min-width: 2rem;
       text-align: center;
     }
@@ -1103,11 +1194,10 @@
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       padding: 1rem 0.8rem;
-      border-radius: 30px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     .nav-dot {
@@ -1230,16 +1320,20 @@
 
       .concept-icons {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-top: 2rem;
       }
 
+      .concept-icon {
+        padding: 1.2rem 1.5rem;
+      }
+
       .concept-icon-emoji {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
 
       .concept-icon-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
 
       /* スライド3: 3つの機能 */
@@ -1595,20 +1689,20 @@
       }
 
       .travel-reason-card {
-        padding: 1.2rem;
+        padding: 1.5rem;
         max-width: 100%;
       }
 
       .travel-reason-card-num {
-        font-size: 1rem;
+        font-size: 0.85rem;
       }
 
       .travel-reason-card-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       .travel-reason-card-desc {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
 
       .travel-reason-arrow {
@@ -1619,6 +1713,43 @@
         font-size: 1rem;
         padding: 1rem 1.5rem;
         margin-top: 1rem;
+      }
+
+      /* VR論理的根拠 */
+      .vr-logic-container {
+        padding: 0 1rem;
+      }
+
+      .vr-logic-badge {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .vr-logic-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .vr-logic-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .vr-logic-card {
+        padding: 1.2rem;
+      }
+
+      .vr-logic-card-title {
+        font-size: 1.1rem;
+      }
+
+      .vr-logic-card-desc {
+        font-size: 0.9rem;
+      }
+
+      .vr-logic-card-highlight {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
       }
 
       /* スライド8: VR旅行 */
@@ -1800,16 +1931,15 @@
     .secret-image {
       max-width: 80vw;
       max-height: 70vh;
-      border-radius: 20px;
-      box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
     }
 
     .secret-text {
       margin-top: 2rem;
       font-size: 2rem;
-      color: #ffd700;
+      color: #fbbf24;
       font-weight: 900;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     }
 
     .secret-close {
@@ -1846,7 +1976,7 @@
     <div class="page-indicator">
       <span class="page-current" id="current-page">1</span>
       <span class="page-separator">/</span>
-      <span class="page-total">18</span>
+      <span class="page-total">19</span>
     </div>
     <!-- ナビゲーションドット -->
     <nav class="nav">
@@ -1868,6 +1998,7 @@
       <div class="nav-dot" onclick="scrollToSlide(16)"></div>
       <div class="nav-dot" onclick="scrollToSlide(17)"></div>
       <div class="nav-dot" onclick="scrollToSlide(18)"></div>
+      <div class="nav-dot" onclick="scrollToSlide(19)"></div>
     </nav>
   </div>
 
@@ -2296,8 +2427,48 @@
     </div>
   </section>
 
-  <!-- スライド16: VR旅行デモ -->
-  <section class="slide slide-5" id="slide-16">
+  <!-- スライド16: VR旅行の論理的根拠 -->
+  <section class="slide slide-vr-logic" id="slide-16">
+    <div class="vr-logic-container">
+      <span class="vr-logic-badge">🧠 VR旅行の論理的根拠</span>
+      <h2 class="vr-logic-title">なぜ「VR旅行」が高齢者の報酬として機能するのか？</h2>
+      <div class="vr-logic-grid">
+        <div class="vr-logic-card">
+          <div class="vr-logic-card-num">THEORY 1</div>
+          <div class="vr-logic-card-title">🚧 身体的制約と欲求ギャップの解消</div>
+          <div class="vr-logic-card-desc">
+            高齢者は旅行が好きでも、体力低下・移動負荷・病気・介護スケジュールなどにより実行率は低下。
+          </div>
+          <div class="vr-logic-card-highlight">
+            → VR旅行は「行きたいけど行けない」ギャップを埋める代替価値
+          </div>
+        </div>
+        <div class="vr-logic-card">
+          <div class="vr-logic-card-num">THEORY 2</div>
+          <div class="vr-logic-card-title">🎮 フロー体験・没入感による高い報酬価値</div>
+          <div class="vr-logic-card-desc">
+            VRは高い没入感・五感への刺激・楽しさや驚きを提供。普段の刺激が少ない高齢者にとって、新奇性のある体験は強い報酬価値を持つ。
+          </div>
+          <div class="vr-logic-card-highlight">
+            → 心理学的にも高い満足度が実証されている
+          </div>
+        </div>
+        <div class="vr-logic-card">
+          <div class="vr-logic-card-num">THEORY 3</div>
+          <div class="vr-logic-card-title">📝 エピソード記憶の活性化</div>
+          <div class="vr-logic-card-desc">
+            旅行は強いエピソード記憶（情景記憶）を生みます。VR旅行でも過去旅行の追体験や新しい景色の入力が起こり、脳の活性化につながります。
+          </div>
+          <div class="vr-logic-card-highlight">
+            → 認知症予防効果や情動の安定が報告されている
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スライド17: VR旅行デモ -->
+  <section class="slide slide-5" id="slide-17">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行画面</span>
       <h2 class="demo-title">実際の画面</h2>
@@ -2307,8 +2478,8 @@
     </div>
   </section>
 
-  <!-- スライド17: VR旅行中画面 -->
-  <section class="slide slide-5" id="slide-17">
+  <!-- スライド18: VR旅行中画面 -->
+  <section class="slide slide-5" id="slide-18">
     <div class="demo-container">
       <span class="demo-badge">🌍 VR旅行中画面</span>
       <h2 class="demo-title">実際の旅行中の画面（Arrival.Space内）</h2>
@@ -2318,8 +2489,8 @@
     </div>
   </section>
 
-  <!-- スライド18: まとめ -->
-  <section class="slide slide-11" id="slide-18">
+  <!-- スライド19: まとめ -->
+  <section class="slide slide-11" id="slide-19">
     <div class="summary-container">
       <h2 class="summary-title">認知症予防は、楽しみながら</h2>
       <div class="summary-points">
